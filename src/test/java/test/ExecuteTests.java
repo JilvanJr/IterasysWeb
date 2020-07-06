@@ -27,16 +27,16 @@ public class ExecuteTests {
 		//	1) Crie uma consulta que retorne uma lista com pelo menos 3 carros 
 		//	usados da mesma marca modelo, os demais critérios da consulta são a sua escolha
 		registerPage.selecionaMarca("Audi");
-		registerPage.selecionaModelo("A8");
+		registerPage.selecionaModelo("A3");
 		registerPage.clicarFlag();
 		registerPage.clicarBuscar();
 		
 		//  2) Valide o modelo e o valor à vista do primeiro e do segundo carro 
 		//  da lista produzida pela consulta
-		registerPage.validaPrimeiroNome("Audi A8 4.0 TFSI Tiptronic Quattro");
-		registerPage.validaPrimeiroValor("R$ 369.990,00");
-		registerPage.validaSegundoNome("Audi A8 4.2 FSI Tiptronic Quattro");
-		registerPage.validaSegundoValor("R$ 149.990,00");
+		registerPage.validaPrimeiroNome("Audi A3 1.4 TFSI Sportback Ambiente S Tronic");
+		registerPage.validaPrimeiroValor("R$ 122.900,00");
+		registerPage.validaSegundoNome("Audi A3 1.4 TFSI Sportback Ambiente S Tronic");
+		registerPage.validaSegundoValor("R$ 77.800,00");
 	}
 	
 		//  4) Outro script deve ler a lista de carros criada na tabela anterior, 

@@ -26,14 +26,6 @@ public class Element {
 		this.posicao = posicao;
 	}
 	
-	public WebElement getElement(By by) { 
-		if (posicao == null) {
-			return Driver.getDriver().findElement(by);
-		}else {
-			return Driver.getDriver().findElements(by).get(posicao); 
-		}
-	}
-
 	public WebElement createElement() {
 		WebElement element = null;
 		switch (by) {
@@ -69,26 +61,16 @@ public class Element {
 		return elements;
 	}
 	
+	public WebElement getElement(By by) { 
+		if (posicao == null) {
+			return Driver.getDriver().findElement(by);
+		}else {
+			return Driver.getDriver().findElements(by).get(posicao); 
+		}
+	}
+	
 	public void click() {
 		createElement().click();
-	}
-	
-	public void clickElementValue(String valor) {
-		for (WebElement webElement : creatElements()) { 
-			if(webElement.getAttribute("value").equals(valor)) {
-				webElement.click(); 
-				break;
-			}
-		}
-	}
-	
-	public void clickElementText(String valor) {
-		for (WebElement webElement : creatElements()) { 
-			if(webElement.getText().equals(valor)) { 
-				webElement.click();
-				break;
-			}
-		}
 	}
 	
 	public void selectText(String value) {
